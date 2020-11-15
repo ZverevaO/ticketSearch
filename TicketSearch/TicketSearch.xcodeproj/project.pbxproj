@@ -14,6 +14,7 @@
 		D78EA206255BF40B00ABD1C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78EA204255BF40B00ABD1C2 /* LaunchScreen.storyboard */; };
 		D78EA209255BF40B00ABD1C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA208255BF40B00ABD1C2 /* main.m */; };
 		D78EA215255C048400ABD1C2 /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA214255C048400ABD1C2 /* AnotherViewController.m */; };
+		D78EA21A255FB69300ABD1C2 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA219255FB69300ABD1C2 /* MyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		D78EA208255BF40B00ABD1C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D78EA213255C048300ABD1C2 /* AnotherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
 		D78EA214255C048400ABD1C2 /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
+		D78EA218255FB69300ABD1C2 /* MyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		D78EA219255FB69300ABD1C2 /* MyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 		D78EA1F5255BF40800ABD1C2 /* TicketSearch */ = {
 			isa = PBXGroup;
 			children = (
+				D78EA21C255FB69800ABD1C2 /* Cell */,
 				D78EA1F6255BF40800ABD1C2 /* AppDelegate.h */,
 				D78EA1F7255BF40800ABD1C2 /* AppDelegate.m */,
 				D78EA1F9255BF40800ABD1C2 /* SceneDelegate.h */,
@@ -76,6 +80,15 @@
 				D78EA208255BF40B00ABD1C2 /* main.m */,
 			);
 			path = TicketSearch;
+			sourceTree = "<group>";
+		};
+		D78EA21C255FB69800ABD1C2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D78EA218255FB69300ABD1C2 /* MyCell.h */,
+				D78EA219255FB69300ABD1C2 /* MyCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +164,7 @@
 				D78EA1F8255BF40800ABD1C2 /* AppDelegate.m in Sources */,
 				D78EA209255BF40B00ABD1C2 /* main.m in Sources */,
 				D78EA1FB255BF40800ABD1C2 /* SceneDelegate.m in Sources */,
+				D78EA21A255FB69300ABD1C2 /* MyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
