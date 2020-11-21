@@ -6,8 +6,12 @@
 //
 
 #import "AnotherViewController.h"
+#import "MyCell.h"
 
-@interface AnotherViewController ()
+@interface AnotherViewController () <UITableViewDataSource>
+
+@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *elements;
 
 @end
 
@@ -15,18 +19,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self bdElements];
    
     [self.view setBackgroundColor:[UIColor systemBlueColor]];
+    
+    [self configure];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) configure {
+   
+    UITableView *table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    table.dataSource = self;
+    [self.view addSubview:table];
+    self.tableView = table;
+    
+    //регистрация класса ячеки
+    [self.tableView registerClass:[MyCell class] forCellReuseIdentifier:@"tableCell"];
 }
-*/
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    MyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableCell"];
+// если ранее зарегистрировали класс ячейки то можно не выполнять следующие дейстивия
+//    if (!cell) {
+//        cell = [[MyCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"tableCell"];
+//    }
+    cell.leftLabel.text = [NSString stringWithFormat: @"Cell %ld", indexPath.row];
+    cell.rightLabel.text =  [NSString stringWithFormat: @"%@", self.elements[indexPath.row]];
+    return cell; 
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.elements.count;
+}
+
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.elements removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+-(void) bdElements {
+    self.elements = [@[ @"один", @"два", @"три", @"четыре", @"пять", @"шесть"] mutableCopy];
+}
+  
 @end
