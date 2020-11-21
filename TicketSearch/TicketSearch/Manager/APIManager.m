@@ -34,11 +34,10 @@
             NSDictionary *json = ((NSDictionary *)result)[@"articles"];
             newsList = [NSMutableArray new];
             for (NSString *key in json) {
-                int i = 0;
-                i++;
-                NSLog(@"%d key=%@",i,key );
-                NSDictionary *value = json[key];
-                News *itemNews = [[News alloc] initWithDictionary:value];
+
+                NSLog(@" key=%@",key );
+                //NSDictionary *value = json[key];
+                News *itemNews = [[News alloc] initWithDictionary:key];
                [newsList addObject:itemNews];
             }
           

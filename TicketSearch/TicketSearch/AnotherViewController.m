@@ -7,6 +7,9 @@
 
 #import "AnotherViewController.h"
 #import "CellNews.h"
+#import "News.h"
+#import <YYWebImage/YYWebImage.h>
+
 
 @interface AnotherViewController () <UITableViewDataSource>
 
@@ -57,8 +60,12 @@
 //    if (!cell) {
 //        cell = [[MyCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"tableCell"];
 //    }
-    cell.titleLabel.text = [NSString stringWithFormat: @"Cell %ld", indexPath.row];
-    cell.descriptionLabel.text =  [NSString stringWithFormat: @"%@", self.newsList[indexPath.row]];
+    News *itemNews = self.newsList[indexPath.row];
+    cell.titleLabel.text = [NSString stringWithFormat: @"%@", itemNews.title];
+    cell.descriptionLabel.text =  [NSString stringWithFormat: @"%@", itemNews.descriptionNews];
+    
+    NSURL *url = [NSURL URLWithString:itemNews.urlImage];
+    [cell.imageNews yy_setImageWithURL:url options:YYWebImageOptionSetImageWithFadeAnimation];
     return cell; 
 }
 
@@ -78,8 +85,6 @@
   // return the height of the particular row in the table view
 }
 
-//-(void) bdElements {
-//    self.elements = [@[ @"один", @"два", @"три", @"четыре", @"пять", @"шесть"] mutableCopy];
-//}
+
   
 @end
