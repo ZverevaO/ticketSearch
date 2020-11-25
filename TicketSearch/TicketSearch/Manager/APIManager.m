@@ -23,21 +23,20 @@
     return instance;
 }
 
-- (void)newsWithRequest:(NSString *)request withCompletion:(void (^)(NSArray *newsList))completion {
+- (void)newsWithCompletion:(void (^)(NSArray *newsList))completion {
     
-    NSString *url = @"https://newsapi.org/v2/everything?q=apple&from=2020-11-21&to=2020-10-21&sortBy=popularity&apiKey=ef0616549460490587380ae375c0a384"; //[NSString stringWithFormat:@"%@%@",request, [self requestSTR]];
+    NSString *url = [NSString stringWithFormat:@"%@", [self requestSTR]];// @"https://newsapi.org/v2/everything?q=apple&from=2020-11-21&to=2020-10-21&sortBy=popularity&apiKey=ef0616549460490587380ae375c0a384";
+    
     
     [self load:url withCompletion:^(id  _Nullable result) {
         NSMutableArray *newsList;
         if ([result isKindOfClass:[NSDictionary class]]) {
             //articles
-            NSDictionary *json = ((NSDictionary *)result)[@"articles"];
+            NSArray *json = ((NSDictionary *)result)[@"articles"];
             newsList = [NSMutableArray new];
-            for (NSString *key in json) {
+            for (NSDictionary *item in json) {
 
-                NSLog(@" key=%@",key );
-                //NSDictionary *value = json[key];
-                News *itemNews = [[News alloc] initWithDictionary:key];
+                News *itemNews = [[News alloc] initWithDictionary:item];
                [newsList addObject:itemNews];
             }
           

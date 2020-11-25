@@ -43,6 +43,7 @@
    
     UITableView *table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     table.dataSource = self;
+    table.delegate = self; 
     [self.view addSubview:table];
     self.tableView = table;
     //регистрация класса ячеки

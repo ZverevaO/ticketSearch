@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-- (void)newsWithRequest:(NSString *)request withCompletion:(void (^)(NSArray *newsList))completion;
+- (void)newsWithCompletion:(void (^)(NSArray *newsList))completion;
 - (void)load:(NSString *)urlString withCompletion:(void (^)(id _Nullable result))completion;
 - (NSString *) requestSTR;
 
