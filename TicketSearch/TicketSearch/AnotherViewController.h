@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AnotherViewController : UIViewController
 
+-(instancetype)initWithNews:(NSArray *) newsList;
+
 @end
 
 NS_ASSUME_NONNULL_END
