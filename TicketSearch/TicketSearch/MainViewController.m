@@ -8,6 +8,7 @@
 #import "MainViewController.h"
 #import "AnotherViewController.h"
 #import "APIManager.h"
+#import "MapViewController.h"
 
 @interface MainViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Appel news";
+    self.title = @"Apple news";
     [self.view setBackgroundColor:[UIColor systemBlueColor]];
     [self configure];
 }
@@ -30,7 +31,7 @@
 }
 
 - (void)goButtonDidTap:(UIButton *)sender {
-    [[APIManager sharedInstance] newsWithRequest:@"https://newsapi.org/v2/everything?" withCompletion:^(NSArray *newsList){
+    [[APIManager sharedInstance] newsWithCompletion:^(NSArray *newsList){
         if (newsList.count > 0) {
             AnotherViewController *newsVC = [[AnotherViewController alloc] initWithNews:newsList];
             [self.navigationController showViewController:newsVC sender:self];
@@ -46,14 +47,20 @@
     }];
 }
 
+-(void) btnLocationDidTap :(UIButton *)sender {
+    
+    MapViewController *mapVC = [MapViewController alloc];
+    [self.navigationController showViewController:mapVC sender:self];
+    
+}
 - (void)configure {
-    UIButton *buttonGONews = [UIButton buttonWithType:UIButtonTypeCustom];
-    [buttonGONews setTitle:@"GO" forState:UIControlStateNormal];
-    buttonGONews.frame = CGRectMake(0.0, 0.0, 100, 30.0);
-    buttonGONews.center = self.view.center;
+    UIButton *btnGONews = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnGONews setTitle:@"GO" forState:UIControlStateNormal];
+    btnGONews.frame = CGRectMake(0.0, 0.0, 100, 30.0);
+    btnGONews.center = self.view.center;
     //[buttonSearch addTarget:self action:@selector(openAnotherViewContriller) forControlEvents:UIControlEventTouchUpInside];
-    [buttonGONews addTarget:self action:@selector(goButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:buttonGONews];
+    [btnGONews addTarget:self action:@selector(goButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnGONews];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 200, 200)];
     label.center = CGPointMake(self.view.center.x, self.view.center.y - 90.0);
@@ -63,6 +70,14 @@
     label.textColor = [UIColor systemGray2Color];
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
+    
+    UIButton *btnLocation = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLocation setTitle:@"Location" forState:UIControlStateNormal];
+    btnLocation.frame = CGRectMake(0.0, 0.0, 100, 30.0);
+    btnLocation.center = CGPointMake(self.view.center.x, self.view.center.y + 90.0);
+    //[buttonSearch addTarget:self action:@selector(openAnotherViewContriller) forControlEvents:UIControlEventTouchUpInside];
+    [btnLocation addTarget:self action:@selector(btnLocationDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnLocation];
     
 }
 

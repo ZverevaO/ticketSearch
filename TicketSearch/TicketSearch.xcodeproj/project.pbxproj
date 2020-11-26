@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		412C5A03281C092E7B723069 /* Pods_TicketSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491BC16AEF3A515AAAEEEC4E /* Pods_TicketSearch.framework */; };
+		D74E20A1256EB2A10097B304 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74E20A0256EB2A10097B304 /* MapViewController.m */; };
+		D74E20A5256EC0A80097B304 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74E20A4256EC0A80097B304 /* LocationManager.m */; };
 		D78EA1F8255BF40800ABD1C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA1F7255BF40800ABD1C2 /* AppDelegate.m */; };
 		D78EA1FB255BF40800ABD1C2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA1FA255BF40800ABD1C2 /* SceneDelegate.m */; };
 		D78EA1FE255BF40800ABD1C2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA1FD255BF40800ABD1C2 /* MainViewController.m */; };
@@ -25,6 +27,10 @@
 		16F34E47240CD94F2EEFB23A /* Pods-TicketSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicketSearch.debug.xcconfig"; path = "Target Support Files/Pods-TicketSearch/Pods-TicketSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		491BC16AEF3A515AAAEEEC4E /* Pods_TicketSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicketSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5005ECFEEB7D44A32AE2E713 /* Pods-TicketSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicketSearch.release.xcconfig"; path = "Target Support Files/Pods-TicketSearch/Pods-TicketSearch.release.xcconfig"; sourceTree = "<group>"; };
+		D74E209F256EB2A10097B304 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D74E20A0256EB2A10097B304 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D74E20A3256EC0A80097B304 /* LocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		D74E20A4256EC0A80097B304 /* LocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		D78EA1F3255BF40800ABD1C2 /* TicketSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78EA1F6255BF40800ABD1C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D78EA1F7255BF40800ABD1C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,7 +72,6 @@
 				16F34E47240CD94F2EEFB23A /* Pods-TicketSearch.debug.xcconfig */,
 				5005ECFEEB7D44A32AE2E713 /* Pods-TicketSearch.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -114,6 +119,8 @@
 				D78EA204255BF40B00ABD1C2 /* LaunchScreen.storyboard */,
 				D78EA207255BF40B00ABD1C2 /* Info.plist */,
 				D78EA208255BF40B00ABD1C2 /* main.m */,
+				D74E209F256EB2A10097B304 /* MapViewController.h */,
+				D74E20A0256EB2A10097B304 /* MapViewController.m */,
 			);
 			path = TicketSearch;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 				D7D90EF82568DE3A00A3C4EC /* DataManager.m */,
 				D7D90EFC2568E05D00A3C4EC /* APIManager.h */,
 				D7D90EFD2568E05D00A3C4EC /* APIManager.m */,
+				D74E20A3256EC0A80097B304 /* LocationManager.h */,
+				D74E20A4256EC0A80097B304 /* LocationManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -262,10 +271,12 @@
 				D78EA1FE255BF40800ABD1C2 /* MainViewController.m in Sources */,
 				D7D90EF42568DB6C00A3C4EC /* News.m in Sources */,
 				D7D90EFE2568E05D00A3C4EC /* APIManager.m in Sources */,
+				D74E20A5256EC0A80097B304 /* LocationManager.m in Sources */,
 				D78EA215255C048400ABD1C2 /* AnotherViewController.m in Sources */,
 				D78EA1F8255BF40800ABD1C2 /* AppDelegate.m in Sources */,
 				D78EA209255BF40B00ABD1C2 /* main.m in Sources */,
 				D7D90EF92568DE3A00A3C4EC /* DataManager.m in Sources */,
+				D74E20A1256EB2A10097B304 /* MapViewController.m in Sources */,
 				D78EA1FB255BF40800ABD1C2 /* SceneDelegate.m in Sources */,
 				D78EA21A255FB69300ABD1C2 /* CellNews.m in Sources */,
 			);
