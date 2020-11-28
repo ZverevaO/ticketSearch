@@ -9,6 +9,7 @@
 #import "AnotherViewController.h"
 #import "APIManager.h"
 #import "MapViewController.h"
+#import "CollectionViewController.h"
 
 @interface MainViewController ()
 
@@ -34,6 +35,23 @@
     [[APIManager sharedInstance] newsWithCompletion:^(NSArray *newsList){
         if (newsList.count > 0) {
             AnotherViewController *newsVC = [[AnotherViewController alloc] initWithNews:newsList];
+            [self.navigationController showViewController:newsVC sender:self];
+
+        }
+        else
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Увы!" message:@" Статьи не найдены." preferredStyle: UIAlertControllerStyleAlert];
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Закрыть" style:(UIAlertActionStyleDefault) handler:nil]];
+                        [self presentViewController:alertController animated:YES completion:nil];
+
+        };
+    }];
+}
+
+- (void)btnCollectionDidTap:(UIButton *)sender {
+    [[APIManager sharedInstance] newsWithCompletion:^(NSArray *newsList){
+        if (newsList.count > 0) {
+            CollectionViewController *newsVC = [[CollectionViewController alloc] initWithNews:newsList];
             [self.navigationController showViewController:newsVC sender:self];
 
         }
@@ -78,6 +96,14 @@
     //[buttonSearch addTarget:self action:@selector(openAnotherViewContriller) forControlEvents:UIControlEventTouchUpInside];
     [btnLocation addTarget:self action:@selector(btnLocationDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnLocation];
+    
+    UIButton *btnCollection = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnCollection setTitle:@"Collection" forState:UIControlStateNormal];
+    btnCollection.frame = CGRectMake(0.0, 0.0, 100, 30.0);
+    btnCollection.center = CGPointMake(self.view.center.x, self.view.center.y + 120.0);
+    //[buttonSearch addTarget:self action:@selector(openAnotherViewContriller) forControlEvents:UIControlEventTouchUpInside];
+    [btnCollection addTarget:self action:@selector(btnCollectionDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnCollection];
     
 }
 
