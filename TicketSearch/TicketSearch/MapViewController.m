@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title =@"Map";
     self.view.backgroundColor = [UIColor whiteColor];
     
     MKMapView *mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];

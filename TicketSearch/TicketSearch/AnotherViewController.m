@@ -11,7 +11,7 @@
 #import <YYWebImage/YYWebImage.h>
 
 
-@interface AnotherViewController () <UITableViewDataSource>
+@interface AnotherViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *elements;

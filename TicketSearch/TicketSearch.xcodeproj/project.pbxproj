@@ -18,6 +18,9 @@
 		D78EA209255BF40B00ABD1C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA208255BF40B00ABD1C2 /* main.m */; };
 		D78EA215255C048400ABD1C2 /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA214255C048400ABD1C2 /* AnotherViewController.m */; };
 		D78EA21A255FB69300ABD1C2 /* CellNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D78EA219255FB69300ABD1C2 /* CellNews.m */; };
+		D7D621DF25717820006F2775 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D621DE25717820006F2775 /* TabBarController.m */; };
+		D7D621E325718038006F2775 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D621E225718038006F2775 /* CollectionViewController.m */; };
+		D7D621E825718229006F2775 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D621E725718229006F2775 /* CollectionCell.m */; };
 		D7D90EF42568DB6C00A3C4EC /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D90EF32568DB6C00A3C4EC /* News.m */; };
 		D7D90EF92568DE3A00A3C4EC /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D90EF82568DE3A00A3C4EC /* DataManager.m */; };
 		D7D90EFE2568E05D00A3C4EC /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D90EFD2568E05D00A3C4EC /* APIManager.m */; };
@@ -46,6 +49,12 @@
 		D78EA214255C048400ABD1C2 /* AnotherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
 		D78EA218255FB69300ABD1C2 /* CellNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellNews.h; sourceTree = "<group>"; };
 		D78EA219255FB69300ABD1C2 /* CellNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellNews.m; sourceTree = "<group>"; };
+		D7D621DD25717820006F2775 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		D7D621DE25717820006F2775 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		D7D621E125718038006F2775 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		D7D621E225718038006F2775 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		D7D621E625718229006F2775 /* CollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		D7D621E725718229006F2775 /* CollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		D7D90EF22568DB6C00A3C4EC /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		D7D90EF32568DB6C00A3C4EC /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		D7D90EF72568DE3A00A3C4EC /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -115,12 +124,16 @@
 				D78EA1FD255BF40800ABD1C2 /* MainViewController.m */,
 				D78EA213255C048300ABD1C2 /* AnotherViewController.h */,
 				D78EA214255C048400ABD1C2 /* AnotherViewController.m */,
+				D74E209F256EB2A10097B304 /* MapViewController.h */,
+				D74E20A0256EB2A10097B304 /* MapViewController.m */,
+				D7D621DD25717820006F2775 /* TabBarController.h */,
+				D7D621DE25717820006F2775 /* TabBarController.m */,
+				D7D621E125718038006F2775 /* CollectionViewController.h */,
+				D7D621E225718038006F2775 /* CollectionViewController.m */,
 				D78EA202255BF40B00ABD1C2 /* Assets.xcassets */,
 				D78EA204255BF40B00ABD1C2 /* LaunchScreen.storyboard */,
 				D78EA207255BF40B00ABD1C2 /* Info.plist */,
 				D78EA208255BF40B00ABD1C2 /* main.m */,
-				D74E209F256EB2A10097B304 /* MapViewController.h */,
-				D74E20A0256EB2A10097B304 /* MapViewController.m */,
 			);
 			path = TicketSearch;
 			sourceTree = "<group>";
@@ -128,6 +141,8 @@
 		D78EA21C255FB69800ABD1C2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D7D621E625718229006F2775 /* CollectionCell.h */,
+				D7D621E725718229006F2775 /* CollectionCell.m */,
 				D78EA218255FB69300ABD1C2 /* CellNews.h */,
 				D78EA219255FB69300ABD1C2 /* CellNews.m */,
 			);
@@ -277,6 +292,9 @@
 				D78EA209255BF40B00ABD1C2 /* main.m in Sources */,
 				D7D90EF92568DE3A00A3C4EC /* DataManager.m in Sources */,
 				D74E20A1256EB2A10097B304 /* MapViewController.m in Sources */,
+				D7D621DF25717820006F2775 /* TabBarController.m in Sources */,
+				D7D621E325718038006F2775 /* CollectionViewController.m in Sources */,
+				D7D621E825718229006F2775 /* CollectionCell.m in Sources */,
 				D78EA1FB255BF40800ABD1C2 /* SceneDelegate.m in Sources */,
 				D78EA21A255FB69300ABD1C2 /* CellNews.m in Sources */,
 			);
